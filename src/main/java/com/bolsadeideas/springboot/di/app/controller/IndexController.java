@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.bolsadeideas.springboot.di.app.model.service.MiServicio;
+import com.bolsadeideas.springboot.di.app.model.service.IServicio;
 
 /**
  * Ventajas y características de la inyeccion de dependencias vamos a ver las
@@ -16,7 +16,7 @@ import com.bolsadeideas.springboot.di.app.model.service.MiServicio;
 public class IndexController {
 	@Autowired
 	@Qualifier("miServicio")
-	private MiServicio miServicio;
+	private IServicio miServicio;
 
 	@GetMapping({ "/index", "/", "" })
 	public String index(Model model) {
