@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * <code>@Component</code>
  * </p>
  */
-@Service("miServicio")
+@Service("miServicioSimple")	
 public class MiServicio implements IServicio{
 	@Override
 	public String operacion() {

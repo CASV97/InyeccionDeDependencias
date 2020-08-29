@@ -13,13 +13,17 @@ import com.bolsadeideas.springboot.di.app.model.service.IServicio;
  */
 @Controller
 public class IndexController {
+	// @Autorided queda ambigüo si existen mas de una implementacion de la interfaz
+	// a implementar, dará error, si queremos que por defecto inyecte una
+	// implementacion, esta deberá llevar el decorador @Primary
 	@Autowired
 	private IServicio miServicio;
 
-	public IndexController(IServicio miServicio) {
-		super();
-		this.miServicio = miServicio;
-	}
+//no hace falta agregar @Autowired por que el parám
+//	public IndexController(IServicio miServicio) {
+//		super();
+//		this.miServicio = miServicio;
+//	}
 
 	@GetMapping({ "/index", "/", "" })
 	public String index(Model model) {
