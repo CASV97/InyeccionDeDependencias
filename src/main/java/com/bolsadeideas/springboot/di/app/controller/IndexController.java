@@ -1,6 +1,7 @@
 package com.bolsadeideas.springboot.di.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ public class IndexController {
 	// a implementar, dará error, si queremos que por defecto inyecte una
 	// implementacion, esta deberá llevar el decorador @Primary
 	@Autowired
+	@Qualifier("miServicioSimple")
 	private IServicio miServicio;
 
 //no hace falta agregar @Autowired por que el parám
