@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
  * <code>@Component</code>
  * </p>
  */
-@Service("miServicio")
-public class MiServicio implements IServicio{
+@Service("miServicioComplejo")
+public class MiServicioComplejo implements IServicio{
 	@Override
 	public String operacion() {
-		return "ejecutando algún proceso importante Simple...";
+		return "ejecutando algún proceso importante complicado ...";
 	}
 	
 }
