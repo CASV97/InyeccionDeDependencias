@@ -4,6 +4,12 @@ public class ItemFactura {
 	private Producto producto;
 	private Integer cantidad;
 
+	public ItemFactura(Producto producto, Integer cantidad) {
+		super();
+		this.producto = producto;
+		this.cantidad = cantidad;
+	}
+
 	public Producto getProducto() {
 		return producto;
 	}

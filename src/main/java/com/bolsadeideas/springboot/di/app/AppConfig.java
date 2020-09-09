@@ -34,5 +34,6 @@ public class AppConfig {
 	public MiServicio registrarMiServicioSimple() {
 		return new MiServicio();
 	}
+	
 
 }
