@@ -1,0 +1,19 @@
+{
+	"properties": [
+		{
+			"name": "cliente.nombre",
+			"type": "java.lang.String",
+			"description": "nombre de prueba para cliente'"
+		},
+		{
+			"name": "cliente.dni",
+			"type": "java.lang.String",
+			"description": "prueba de valor dni dni'"
+		},
+		{
+			"name": "factura.descripcion",
+			"type": "java.lang.String",
+			"description": "Descripcion de la factura'"
+		}
+	]
+}
