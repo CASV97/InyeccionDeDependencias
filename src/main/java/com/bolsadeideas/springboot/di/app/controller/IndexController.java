@@ -1,7 +1,6 @@
 package com.bolsadeideas.springboot.di.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +13,16 @@ import com.bolsadeideas.springboot.di.app.model.service.IServicio;
  */
 @Controller
 public class IndexController {
-	// @Autorided queda ambigüo si existen mas de una implementacion de la interfaz
-	// a implementar, dará error, si queremos que por defecto inyecte una
-	// implementacion, esta deberá llevar el decorador @Primary
+	/*
+	 * @Autorided queda ambigüo si existen mas de una implementacion de la interfaz
+	 * a implementar, dará error, si queremos que por defecto inyecte una
+	 * implementacion, esta deberá llevar el decorador @Primary en la clase
+	 * 
+	 * @Qualifier("NomImplementacion") se hara uso para especificar una
+	 * implementacion en específico
+	 */
 	@Autowired
-	@Qualifier("miServicioSimple")
-	private IServicio miServicio;
+	private IServicio miServicioComplejo;
 
 //no hace falta agregar @Autowired por que el parám
 //	public IndexController(IServicio miServicio) {
@@ -29,7 +32,7 @@ public class IndexController {
 
 	@GetMapping({ "/index", "/", "" })
 	public String index(Model model) {
-		model.addAttribute("objeto", miServicio.operacion());
+		model.addAttribute("objeto", miServicioComplejo.operacion());
 		model.addAttribute("titulo", "Añadiendo la clase de servicio");
 		return "index";
 	}

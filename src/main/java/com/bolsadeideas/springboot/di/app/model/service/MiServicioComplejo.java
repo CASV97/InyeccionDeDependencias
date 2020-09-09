@@ -1,8 +1,5 @@
 package com.bolsadeideas.springboot.di.app.model.service;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
-
 /**
  * <h1>adding service class</h1>
  * <p>
@@ -15,8 +12,6 @@ import org.springframework.stereotype.Service;
  * defecto a inyectar
  * </p>
  */
-@Service("miServicioComplejo")
-@Primary
 public class MiServicioComplejo implements IServicio {
 	@Override
 	public String operacion() {
