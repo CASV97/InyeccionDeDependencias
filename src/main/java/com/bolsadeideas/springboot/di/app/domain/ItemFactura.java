@@ -8,7 +8,7 @@ public class ItemFactura {
 		this.producto = producto;
 		this.cantidad = cantidad;
 	}
-
+	
 	public Double calcularImporte() {
 		return cantidad * producto.getPrecio();
 	}

@@ -3,6 +3,7 @@ package com.bolsadeideas.springboot.di.app.domain;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,7 @@ public class Factura {
 	// una factura tiene una o mas lineas o items podremos inyectar el componente
 	// una vez agregado desde la clase de configuracion al contenedor de Spring
 	@Autowired
+	//@Qualifier("itemsFacturaOficina")
 	private List<ItemFactura> items;
 
 	public String getDescripcion() {

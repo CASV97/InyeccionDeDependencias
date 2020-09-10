@@ -39,13 +39,28 @@ public class AppConfig {
 	public MiServicio registrarMiServicioSimple() {
 		return new MiServicio();
 	}
-	@Bean
+	@Bean("itemsFactura")
 	public List<ItemFactura> registrarItems(){
 		List<ItemFactura> list=new ArrayList<ItemFactura>();
 		Producto p1=new Producto("California", 15.6);
 		Producto p2=new Producto("Amnesia", 20.6);
 		list.add(new ItemFactura(p1, 4));
 		list.add(new ItemFactura(p2, 2));
+		
+		return list;
+	}
+	@Bean("itemsFacturaOficina")
+	@Primary
+	public List<ItemFactura> registrarItemsOficina(){
+		List<ItemFactura> list=new ArrayList<ItemFactura>();
+		Producto p1=new Producto("Grinder", 5.6);
+		Producto p2=new Producto("Bolsas erme", 2.6);
+		Producto p3=new Producto("Báscula", 15.00);
+		Producto p4=new Producto("Papeles ROW", 1.0);
+		list.add(new ItemFactura(p1, 4));
+		list.add(new ItemFactura(p2, 2));
+		list.add(new ItemFactura(p3, 2));
+		list.add(new ItemFactura(p4, 10));
 		
 		return list;
 	}
