@@ -14,7 +14,9 @@ public class Factura {
 	// Tiene relacion con cliente
 	@Autowired
 	private Cliente cliente;
-	// una factura tiene una o mas lineas o items
+	// una factura tiene una o mas lineas o items podremos inyectar el componente
+	// una vez agregado desde la clase de configuracion al contenedor de Spring
+	@Autowired
 	private List<ItemFactura> items;
 
 	public String getDescripcion() {

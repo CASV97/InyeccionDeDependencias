@@ -5,9 +5,12 @@ public class ItemFactura {
 	private Integer cantidad;
 
 	public ItemFactura(Producto producto, Integer cantidad) {
-		super();
 		this.producto = producto;
 		this.cantidad = cantidad;
+	}
+
+	public Double calcularImporte() {
+		return cantidad * producto.getPrecio();
 	}
 
 	public Producto getProducto() {

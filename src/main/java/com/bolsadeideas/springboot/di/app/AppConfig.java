@@ -1,9 +1,14 @@
 package com.bolsadeideas.springboot.di.app;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import com.bolsadeideas.springboot.di.app.domain.ItemFactura;
+import com.bolsadeideas.springboot.di.app.domain.Producto;
 import com.bolsadeideas.springboot.di.app.model.service.IServicio;
 import com.bolsadeideas.springboot.di.app.model.service.MiServicio;
 import com.bolsadeideas.springboot.di.app.model.service.MiServicioComplejo;
@@ -33,6 +38,16 @@ public class AppConfig {
 	@Primary
 	public MiServicio registrarMiServicioSimple() {
 		return new MiServicio();
+	}
+	@Bean
+	public List<ItemFactura> registrarItems(){
+		List<ItemFactura> list=new ArrayList<ItemFactura>();
+		Producto p1=new Producto("California", 15.6);
+		Producto p2=new Producto("Amnesia", 20.6);
+		list.add(new ItemFactura(p1, 4));
+		list.add(new ItemFactura(p2, 2));
+		
+		return list;
 	}
 	
 
