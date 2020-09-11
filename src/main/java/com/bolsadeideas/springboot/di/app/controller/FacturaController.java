@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bolsadeideas.springboot.di.app.domain.Factura;
-
+//El contexto por defecto del componente por defecto va a ser Singlenton
 @Controller
 @RequestMapping("/factura")
 public class FacturaController {

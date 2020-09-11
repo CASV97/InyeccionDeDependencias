@@ -1,5 +1,6 @@
 package com.bolsadeideas.springboot.di.app.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -8,9 +9,21 @@ import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
+/**
+ * Podemos cambiar el contexto, para que en vez de que sea Singlenton, sea del
+ * tipo Reaquest(Va a durar lo que dura una peticioin HTTP), por ejemplo cada
+ * usuario que se conecte, va a tener una factura distinta y propia, y si se
+ * modifica ese valor ese valor no se altera al resto se necesita que implemente
+ * la interfaz serializable, por que conbierte el olbjeto en una secuencia de
+ * bites y transportar en estos tipos de almacenamiento
+ */
 @Component
-public class Factura {
+@RequestScope
+public class Factura implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	@Value("${factura.descripcion}")
 	private String descripcion;
 	// Relacion etre clases
